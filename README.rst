@@ -26,11 +26,12 @@ working as expected: the build task was invoking needless recompilation, but eve
 ``docker-compose up`` kept recreating some of the services, even if their configuration didn't
 change at all.
 
-At first I thought that tweaking the ``config_changed()`` function to use ``pprint.pformat()``
+At first I thought that tweaking the `config_changed()`__ function to use ``pprint.pformat()``
 instead of a plain ``repr()`` would be enough\ [*]_, but after some further investigation I found
 that not only the ordering of *keys* in a dictionary was changing from one run to the next, but
 also the ordering of *items* in various lists (``volumes``, to mention one).
 
+__ https://github.com/pydoit/doit/blob/fc97427bb5e912b6544e91a4049e14aa2b5570a3/doit/tools.py#L62
 .. [*] See https://github.com/pydoit/doit/issues/113
 
 Demonstration
