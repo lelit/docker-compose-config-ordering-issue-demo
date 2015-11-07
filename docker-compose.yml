@@ -1,0 +1,12 @@
+web:
+  extends:
+    file: base.yml
+    service: web
+  volumes:
+   - ./app:/srv/app
+   - ./www:/srv/www
+  links:
+   - redis
+
+redis:
+  image: redis
