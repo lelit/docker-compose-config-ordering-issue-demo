@@ -1,6 +1,6 @@
-==============================================================
- Demonstrate issue with list ordering in docker-compose 1.5.0
-==============================================================
+===============================================================================
+ Demonstrate issue with list ordering in docker-compose 1.5.0 (`issue 2342`__)
+===============================================================================
 
 This is a s{a/i}ample project that demonstrate an issue with the way docker-compose
 configuration is loaded and interpolated.
@@ -8,6 +8,7 @@ configuration is loaded and interpolated.
 It seems the new functionality is perturbed by the `hash randomization`__ feature introduced in
 Python 3.3 (backported to Python 2.7, off by default).
 
+__ https://github.com/docker/compose/issues/2342
 __ https://docs.python.org/3/using/cmdline.html#envvar-PYTHONHASHSEED
 
 Why it matters
